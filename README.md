@@ -1,7 +1,7 @@
-# Flask Web App Starter
+# OpenWerewolf
 
-A Flask starter template based on [these docs](https://flask.palletsprojects.com/en/3.0.x/quickstart/#a-minimal-application).
+<div align="center">
+  <img src="static/icon/openwerewolf.png" alt="A beautiful image" width="400"/>
+</div>
 
-## Getting Started
-
-Previews should run automatically when starting a workspace.
+An open-source Werewolf Game Framework.
