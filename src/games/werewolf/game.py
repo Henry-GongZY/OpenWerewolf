@@ -23,6 +23,7 @@ def assign_roles(players: list[Player]):
         player.role = roles[i]
         logger.info(f"{player.name} 的角色是 {player.role.name}")
 
+
 def check_game_over(game_engine):
     """检查游戏是否结束."""
     werewolves = [p for p in game_engine.room.players if p.role.name == "狼人" and p.alive]
@@ -35,26 +36,11 @@ def check_game_over(game_engine):
         logger.info("狼人阵营胜利！")
         game_engine.game_over = True
 
+
 def night_start(room:Room, day: int):
     logger.info(f"第{day}天黑夜")
     for player in room.players:
-        if isinstance(player.role, Seer):
-            player.role.night_start(room)
-        if isinstance(player.role, Werewolf):
-            player.role.night_start(room)
-        if isinstance(player.role, Witch):
-            player.role.night_start(room)
-            # is_save = input("是否使用解药?(y/n)")
-            # if is_save == "y":
-            #     saved_player_index = int(input("请选择要救活的玩家编号"))
-            #     saved_player = room.players[saved_player_index - 1]
-            #     player.role.use_potion_save(saved_player)
-
-            # is_kill = input("是否使用毒药?(y/n)")
-            # if is_kill == "y":
-            #     killed_player_index = int(input("请选择要毒杀的玩家编号"))
-            #     killed_player = room.players[killed_player_index-1]
-            #     player.role.use_potion_kill(killed_player)
+        player.role.night_start(room)
 
 
 def day_start(day:int,room:Room):
