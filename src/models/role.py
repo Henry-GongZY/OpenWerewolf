@@ -1,5 +1,6 @@
+import abc
 
-class Role:
+class Role(abc.ABC):
     def __init__(self, name: str, camp: str):
         """
         角色基类
@@ -13,9 +14,11 @@ class Role:
 
     def __str__(self):
         return self.name
-
+    
+    @abc.abstractmethod
     def day_start(self, room):
         pass
-
+    
+    @abc.abstractmethod
     def night_start(self, room):
         pass
