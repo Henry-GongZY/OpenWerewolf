@@ -1,4 +1,5 @@
 #!/bin/sh
+export PORT=8080
 export PATH="$HOME/.local/bin:$PATH"
 
 poetry install
@@ -8,9 +9,4 @@ if ! grep -q "$PATH" /home/user/.bashrc; then
   echo 'export PATH="$HOME/.local/bin:$PATH"' >> /home/user/.bashrc
 fi
 
-if [ -z "$PORT" ]; then
-  echo "PORT environment variable not set. Using default port 5000."
-  python -m flask --app src/main run -p 5000 --debug
-else
-  python -m flask --app src/main run -p $PORT --debug
-fi
+python -m flask --app src/main run -p $PORT --debug

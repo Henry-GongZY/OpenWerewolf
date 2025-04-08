@@ -16,9 +16,5 @@ class Role(abc.ABC):
         return self.name
     
     @abc.abstractmethod
-    def day_start(self, room):
-        pass
-    
-    @abc.abstractmethod
     def night_start(self, room):
         pass
