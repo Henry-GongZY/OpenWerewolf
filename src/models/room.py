@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Dict
 from models.player import Player
 
 class Room:

@@ -40,7 +40,7 @@ def check_game_over(game_engine):
 def night_start(room:Room, day: int):
     logger.info(f"第{day}天黑夜")
     for player in room.players:
-        player.role.night_start(room)
+        player.night_start(room)
 
 
 def day_start(day:int,room:Room):
@@ -50,6 +50,7 @@ def day_start(day:int,room:Room):
         if player.alive:
             logger.info(f"玩家{player.name}开始发言")
     logger.info("发言结束，开始投票")
+
     vote_counts = {}
     for player in room.players:
         if player.alive:
@@ -71,7 +72,7 @@ def day_start(day:int,room:Room):
 
 
 def end_game(game_engine:GameEngine):
-    logger.info("绑定结束游戏事件")
+    logger.info("结束游戏")
 
 
 # 加载配置文件

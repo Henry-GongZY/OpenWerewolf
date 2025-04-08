@@ -14,3 +14,12 @@ class Player:
 
     def __str__(self):
         return self.name
+
+    def day_talk(self, room):
+        pass
+
+    def day_votw(self, room):
+        pass
+
+    def night_start(self, room):
+        self.role.night_start(room)
