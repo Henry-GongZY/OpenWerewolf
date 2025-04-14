@@ -73,11 +73,7 @@ def day_start(day:int,room:Room):
 
 def end_game(game_engine:GameEngine):
     logger.info("结束游戏")
-
-
-# 加载配置文件
-config = load_config("games/werewolf/rules.json")
-logger.info(config)
+    
 
 # 绑定事件监听器
 event_system.on("assign_roles", assign_roles)
